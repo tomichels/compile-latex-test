@@ -9,10 +9,10 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: example.tex
+          root_file: biblatex_test.tex
           latexmk_use_lualatex : true
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: example.pdf
+          path: biblatex_test.pdf
