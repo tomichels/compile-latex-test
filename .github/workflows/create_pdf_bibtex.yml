@@ -9,7 +9,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: bibtex_test.tex
+          root_file: ../tests/bibtex_test.tex
           latexmk_use_lualatex : true
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
