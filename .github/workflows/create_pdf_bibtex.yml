@@ -2,7 +2,7 @@ name: Build BiBTeX document
 on: 
   push:
     paths:
-    - 'example.bib'
+    - 'ex2ample.bib'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
