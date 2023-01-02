@@ -15,4 +15,4 @@ jobs:
           python-version: 3.8
       - name: Run Python script
         run: |
-         python3 replace.py
+         python3 ./replace.py
