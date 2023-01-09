@@ -16,8 +16,7 @@ jobs:
       with:
         repository: jcdan3/devops
         token: ${{ secrets.GITHUB_TOKEN }}
-        path: ${{ env.DEVOPS_DIR }}
 
     - name: replace
-      run: python ${{ env.DEVOPS_DIR }}/replace.py
+      run: python ./replace.py
       shell: sh
