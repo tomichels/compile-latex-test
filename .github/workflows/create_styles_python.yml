@@ -17,5 +17,9 @@ jobs:
       uses: xu-cheng/latex-action@v2
       with:
           root_file: test0.tex
-
+    - name: Upload PDF file
+      uses: actions/upload-artifact@v3
+      with:
+        name: test
+        path: test0.tex
         
