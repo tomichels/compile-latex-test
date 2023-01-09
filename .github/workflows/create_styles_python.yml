@@ -13,7 +13,7 @@ jobs:
     - name: run
       run: |
         python replace.py
-        for ((i=0; i < 2; i++)) do pdflatex test$i.tex done
+     #  for ((i=0; i < 2; i++)) do pdflatex test$i.tex done
       #  ls *.tex
       #  cat test*.tex
 
