@@ -13,11 +13,9 @@ jobs:
     - name: run
       run: |
         python replace.py
-        for ((i = 0 ; i < 1 ; i++)) 
-          do
     - name: compile
       uses: xu-cheng/latex-action@v2
       with:
-          root_file: test\$i.tex
+          root_file: test0.tex
 
         
