@@ -17,10 +17,7 @@ jobs:
       #  cat test*.tex
     - name: compile
       uses: xu-cheng/latex-action@v2
-    - name: compile
-      run: |
-        for ((i=0;i<1;i++))
-        do
-        pdflatex test$i.tex
-        done
+      with:
+        root_file: for ((i=0;i<1;i++)) do ./test$i.tex done
+
         
