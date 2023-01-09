@@ -14,3 +14,4 @@ jobs:
       run: |
         python replace.py
         ls
+        nano test1.tex
