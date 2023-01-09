@@ -24,6 +24,14 @@ def create_files():
     for i in range(len(dir_list)):
         shutil.copy('test.tex', 'test' + format(i) + '.tex')
 
+# compile LaTeX
+def compile_latex():
+    for i in range(len(dir_list)):
+        os.system("lualatex test"+format(i)+".tex")
+        os.system("bibtex test"+format(i)+".aux")
+        os.system("lualatex test"+format(i)+".tex")
+
 # main
 dir_list = get_dir()
 search_and_replace()
+compile_latex()
