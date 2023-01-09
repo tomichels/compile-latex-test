@@ -9,16 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check-out
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: run
       run: |
         python replace.py
-        for ((i=0; i < 2; i++)) 
-        do 
-          pdflatex test$i.tex 
         done
       #  ls *.tex
       #  cat test*.tex
-
+    - name: compile
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: test*.tex
+        latexmk_use_lualatex: true
           
         
