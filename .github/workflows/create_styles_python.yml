@@ -10,8 +10,6 @@ jobs:
     steps:
     - name: Check-out
       uses: actions/checkout@v3
-    - name: Compile Latex Document
-      uses: xu-cheng/latex-action@v2
     - name: run
       run: |
         apt-get install texlive texlive-base
