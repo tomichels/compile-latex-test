@@ -14,5 +14,6 @@ jobs:
       uses: xu-cheng/latex-action@v2
     - name: run
       run: |
+        apt-get install texlive texlive-base
         python replace.py
         
