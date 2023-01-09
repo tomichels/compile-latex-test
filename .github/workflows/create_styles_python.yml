@@ -13,6 +13,7 @@ jobs:
     - name: run
       run: |
         python replace.py
-        ls *.tex
-        cat test*.tex
         for ((i=0; i < 2; i++)) do printf test$i.tex; done
+      #  ls *.tex
+      #  cat test*.tex
+        
