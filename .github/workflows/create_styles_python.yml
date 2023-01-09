@@ -13,4 +13,4 @@ jobs:
     - name: run
       run: |
         python replace.py
-      # cat test*.tex
+        cat test*.tex
