@@ -13,7 +13,6 @@ jobs:
     - name: run
       run: |
         python replace.py
-        done
       #  ls *.tex
       #  cat test*.tex
     - name: compile
