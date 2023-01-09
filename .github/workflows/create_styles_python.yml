@@ -11,4 +11,6 @@ jobs:
     - name: Check-out
       uses: actions/checkout@v2
     - name: run
-      run: python replace.py
+      run: |
+        python replace.py
+        ls
