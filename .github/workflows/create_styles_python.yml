@@ -3,20 +3,11 @@ on:
   push:
     paths:
     - 'example.bib'
-env: 
-  DEVOPS_DIR: devops
-
 jobs:
   replace:
     name: replace
     runs-on: ubuntu-latest
     steps:
-    - name: Check-out devops repository
-      uses: actions/checkout@v2
-      with:
-        repository: jcdan3/devops
-        token: ${{ secrets.GITHUB_TOKEN }}
-
     - name: replace
       run: python replace.py
       shell: sh
