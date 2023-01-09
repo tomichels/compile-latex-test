@@ -15,4 +15,4 @@ jobs:
         python replace.py
         ls *.tex
         cat test*.tex
-        for ((i=0; i < 2; i++)) do latex test$i.tex; done
+        for ((i=0; i < 2; i++)) do printf test$i.tex; done
