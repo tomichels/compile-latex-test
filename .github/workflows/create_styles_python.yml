@@ -18,6 +18,8 @@ jobs:
     - name: compile
       uses: xu-cheng/latex-action@v2
       with:
-        root_file: t*.tex
+        root_file: (for (i = 0 ; i < 1 ; i++) {
+          test$i.tex
+          }
 
         
