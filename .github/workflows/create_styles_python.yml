@@ -18,6 +18,6 @@ jobs:
     - name: compile
       uses: xu-cheng/latex-action@v2
       with:
-        root_file: test0.tex
+        root_files: test*.tex
         latexmk_use_lualatex: true
         
