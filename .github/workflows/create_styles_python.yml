@@ -1,19 +1,23 @@
 name: Run Python Script
-
 on:
   push:
     paths:
     - 'example.bib'
+env: 
+  DEVOPS_DIR: devops
+
 jobs:
-  build:
+  replace:
+    name: replace
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          root_file: ./replace.py
-          python-version: 3.8
-      - name: Run Python script
-        run: |
-         python3 replace.py
+    - name: Check-out devops repository
+      uses: actions/checkout@v2
+      with:
+        repository: jcdan3/devops
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: ${{ env.DEVOPS_DIR }}
+
+    - name: replace
+      run: python ${{ env.DEVOPS_DIR }}/replace.py
+      shell: sh
