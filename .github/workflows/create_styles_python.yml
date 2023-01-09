@@ -13,13 +13,11 @@ jobs:
     - name: run
       run: |
         python replace.py
-      #  ls *.tex
-      #  cat test*.tex
-    - name: compile
-      uses: xu-cheng/latex-action@v2
-      with:
-        root_file: (for (i = 0 ; i < 1 ; i++) {
-          test$i.tex
-          }
+        for (i = 0 ; i < 1 ; i++) 
+          do
+            - name: compile
+             uses: xu-cheng/latex-action@v2
+              with:
+                root_file: test\$i.tex
 
         
