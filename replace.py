@@ -47,6 +47,7 @@ def search_error():
         with open("test"+format(i)+".blg","r") as file:
             for line in file:
                 if re.search("Error", line) or ("illegal style-file", line):
+                    os.system("cat test"+format(i)+".blg")
                     raise Exception('Error found in ' + format(i))
 
 
