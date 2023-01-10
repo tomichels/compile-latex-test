@@ -15,7 +15,3 @@ jobs:
         sudo apt-get install texlive texlive-base texlive-luatex
         python replace.py
         cat test*.tex
-    - name: Upload PDF file
-      uses: actions/upload-artifact@v3
-      with:
-        path: test0.pdf
