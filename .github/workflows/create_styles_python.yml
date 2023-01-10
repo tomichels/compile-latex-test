@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v3
     - name: run
       run: |
-        sudo apt-get install texlive texlive-base
+        sudo apt-get install texlive texlive-base texlive-luatex
         python replace.py
         cat test*.tex
     - name: Upload PDF file
