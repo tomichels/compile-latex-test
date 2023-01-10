@@ -35,7 +35,7 @@ def compile_latex():
 # check if output file exists
 def file_exists():
     for i in range(len(dir_list)):
-        file_exists = os.path.exists('te232st'+format(i)+'.pdf')
+        file_exists = os.path.exists('test'+format(i)+'.pdf')
         if not(file_exists):
             raise Exception('Output file could not be found!')
 
