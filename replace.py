@@ -44,11 +44,16 @@ def compile_latex():
 def search_error():
     for i in range(len(dir_list)):
         with open('test' + format(i) +'.blg','r') as text_file:
+            line_counter = 0
             lines = text_file.readlines()
             for line in lines:
+                line_counter += 1
                 if line.lower().__contains__('error') or line.lower().__contains__('illegal style-file'):
-                    print('Error found in: '+line)
-                    raise Exception('Error found!')
+                    os.system('cat test' + format(i) + '.blg')
+                    raise Exception('Error found! See test' + format(i) + '.blg on line ' + format(line_counter) + ' for more information!')
+
+    print('No Error was found while compiling \nSuccessfully created ' + format(len(dir_list)) + ' .tex files!')
+
                     
 # main
 dir_list = get_dir()
