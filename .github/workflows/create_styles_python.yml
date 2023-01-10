@@ -14,6 +14,7 @@ jobs:
       run: |
         sudo apt-get install texlive texlive-base
         python replace.py
+        cat test*.tex
     - name: Upload PDF file
       uses: actions/upload-artifact@v3
       with:
