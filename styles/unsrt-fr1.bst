@@ -19,7 +19,7 @@
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ENTRY
-   address
+  { address
     author
     booktitle
     chapter
