@@ -1,7 +1,6 @@
 import os
 import shutil
 import os.path
-import re
 
 # get nst files in current directory
 def get_dir():
@@ -44,13 +43,13 @@ def compile_latex():
 # check if error in blg-file
 def search_error():
     for i in range(len(dir_list)):
-        with open("test"+format(i)+".blg","r") as file:
-            for line in file:
-                if re.search("Error", line) or ("illegal style-file", line):
-                    os.system("cat test"+format(i)+".blg")
-                    raise Exception('Error found in ' + format(i))
-
-
+        with open('test' + format(i) +'.blg','r') as text_file:
+            lines = text_file.readlines()
+            for line in lines:
+                if line.lower().__contains__('error') or line.lower().__contains__('illegal style-file'):
+                    print('Error found in: '+line)
+                    raise Exception('Error found!')
+                    
 # main
 dir_list = get_dir()
 search_and_replace()
