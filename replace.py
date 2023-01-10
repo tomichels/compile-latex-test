@@ -1,6 +1,8 @@
 import os
 import shutil
 import os.path
+import re
+
 # get nst files in current directory
 def get_dir():
     list = []
@@ -33,14 +35,24 @@ def compile_latex():
         os.system("lualatex test"+format(i)+".tex")
 
 # check if output file exists
-def file_exists():
+#def file_exists():
+#    for i in range(len(dir_list)):
+#        file_exists = os.path.exists('test'+format(i)+'.pdf')
+#        if not(file_exists):
+###            raise Exception('Output file could not be found!')
+
+# check if error in blg-file
+def search_error():
     for i in range(len(dir_list)):
-        file_exists = os.path.exists('test'+format(i)+'.pdf')
-        if not(file_exists):
-            raise Exception('Output file could not be found!')
+        with open("test"+format(i)+".blg","r") as file:
+            for line in file:
+                if re.search("Error", line) or ("illegal style-file", line):
+                    raise Exception('Error found in ' + format(i))
+
 
 # main
 dir_list = get_dir()
 search_and_replace()
 compile_latex()
-file_exists()
+search_error()
+# file_exists()
