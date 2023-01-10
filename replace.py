@@ -51,7 +51,6 @@ def search_error():
                 if line.lower().__contains__('error') or line.lower().__contains__('illegal style-file'):
                     os.system('cat test' + format(i) + '.blg')
                     raise Exception('Error found! See test' + format(i) + '.blg on line ' + format(line_counter) + ' for more information!')
-
     print('No Error was found while compiling \nSuccessfully created ' + format(len(dir_list)) + ' .tex files!')
 
                     
