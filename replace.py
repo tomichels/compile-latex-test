@@ -1,5 +1,6 @@
-import os, shutil
-
+import os
+import shutil
+import os.path
 # get nst files in current directory
 def get_dir():
     list = []
@@ -31,7 +32,15 @@ def compile_latex():
         os.system("bibtex test"+format(i)+".aux")
         os.system("lualatex test"+format(i)+".tex")
 
+# check if output file exists
+def file_exists():
+    for i in range(len(dir_list)):
+        file_exists = os.path.exists('test'+format(i)+'.pdf')
+        if not(file_exists):
+            raise Exception('Output file could not be found!')
+
 # main
 dir_list = get_dir()
 search_and_replace()
 compile_latex()
+file_exists()
