@@ -1,6 +1,5 @@
 import os
 import shutil
-import os.path
 
 # get nst files in current directory
 def get_dir():
@@ -33,13 +32,6 @@ def compile_latex():
         os.system("bibtex test"+format(i)+".aux")
         os.system("lualatex test"+format(i)+".tex")
 
-# check if output file exists
-#def file_exists():
-#    for i in range(len(dir_list)):
-#        file_exists = os.path.exists('test'+format(i)+'.pdf')
-#        if not(file_exists):
-###            raise Exception('Output file could not be found!')
-
 # check if error in blg-file
 def search_error():
     for i in range(len(dir_list)):
@@ -50,7 +42,7 @@ def search_error():
                 line_counter += 1
                 if line.lower().__contains__('error') or line.lower().__contains__('illegal style-file'):
                     os.system('cat test' + format(i) + '.blg')
-                    raise Exception('Error found! See test' + format(i) + '.blg on line ' + format(line_counter) + ' for more information!')
+                    raise Exception('Error found! See test' + format(i) + '.blg on line ' + format(line_counter) + ': "' + line +'"')
     print('No Error was found while compiling \nSuccessfully created ' + format(len(dir_list)) + ' .tex files!')
 
                     
@@ -59,4 +51,4 @@ dir_list = get_dir()
 search_and_replace()
 compile_latex()
 search_error()
-# file_exists()
+    
