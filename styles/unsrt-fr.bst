@@ -18,7 +18,7 @@
  % This program consists of the files unsrt.bst
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-ENT2RY
+E1NT2RY
   { address
     author
     booktitle
