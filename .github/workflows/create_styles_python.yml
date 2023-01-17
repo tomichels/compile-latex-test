@@ -2,7 +2,7 @@ name: Run Python Script
 on:
   push:
     paths:
-    - 'styles/'
+    - './styles/'
 jobs:
   replace:
     name: create files
